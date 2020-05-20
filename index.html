@@ -11,7 +11,9 @@
   </head>
   <body>
     <div class="content">
-      <h1>Руководство по FLEXBOX</h1>
+      <header>
+        <h1>Руководство по FLEXBOX</h1>
+      </header>
       <details>
         <summary>
           <h2>Введение</h2>
@@ -152,7 +154,72 @@
         <li><code>column-reverse</code> — тоже самое, что и row-reverse, но снизу вверх.</li>
       </ul>
     </div>
+    <div class="info-text">
+      <h3 class="title">#flex-wrap</h3>
+      <div class="block-info__img">
+        <img
+          src="https://css-tricks.com/wp-content/uploads/2018/10/flex-wrap.svg"
+          alt=""
+        />
+      </div>
+      <pre>
+        <code>
+.container <span class="span-punctuation">{</span>
+  <span class="span-property">flex-wrap</span><span class="span-punctuation">:</span> nowrap | wrap | wrap-reverse<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <p>Изначально все flex-элементы будут пытаться уместиться в одну строку. Вы можете поменять это и дать возможность этим элементам переходить на другую строку, при необходимости.</p>
+      <p><code>nowrap</code> — это значение по-дефолту, при котором все flex элементы будут выстраиваться в одну линию.</p>
+      <p><code>wrap</code> — flex элементы будут переноситься на несколько строк, от верха к низу.</p>
+      <p><code>wrap-reverse</code> — flex элементы будут переноситься на несколько строк снизу вверх.</p>
     </div>
-    
+    <div class="info-text">
+      <h3 class="title">#flex-flow (применяется для родительского flex контейнера)</h3>
+      <p>Это сокращение <code>flex-direction</code> и <code>flex-wrap</code> свойств, которые вместе определяют направление главной и поперечной оси. По-дефолту оно имеет значение <code>row nowrap</code>.</p>
+      <pre>
+        <code>
+  .container <span class="span-punctuation">{</span>
+  <span class="span-property">flex-flow</span><span class="span-punctuation">:</span> <'flex-direction'> || <'flex-wrap'><span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+        </code>
+      </pre>
+    </div>
+    <div class="info-text">
+      <h3 class="title">#justify-content</h3>
+      <div class="block-info__img">
+        <img
+          src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg"
+          alt=""
+        />
+      </div>
+      <p>Свойство определяет выравнивание вдоль главной оси. Оно помогает распределить лишнее свободное пространство, когда, либо все flex элементы в линии имеют фиксированный размер, либо же нет, но уже достигли своего максимального размера. Оно также влияет на выравнивание элементов, когда те переполнят строку.</p>
+      <pre>
+        <code>
+    .container <span class="span-punctuation">{</span>
+    <span class="span-property">justify-content</span><span class="span-punctuation">:</span> flex-start | flex-end | center | space-between | space-around | space-evenly<span class="span-punctuation">;</span>
+    <span class="span-punctuation">}</span>
+        </code>
+      </pre>
+    <ul class="list">
+      <li>
+        <code>flex-start</code> — дефолтное состояние, при котором элементы расставляются от начала строки.
+      </li>
+      <li>
+        <code>flex-end</code> — состояние, в котором элементы размещены с конца строки.
+      </li>
+      <li>
+        <code>center</code> — элементы центрированы вдоль строки.</li>
+      <li>
+        <code>space-between</code> — элементы равномерно распределены по строке, первый элемент находится вначале строки, последний в конце.
+       </li>
+      <li>
+        <code>space-around</code> — элементы равномерно распределены по строке с равным местом вокруг них. Учтите, что визуально пробелы не равномерны, так как все элементы имеют одинаковые пробелы с двух сторон. Первый элемент получит одну единицу свободного места от границы контейнера, но получит две единицы свободного места от следующего элемента, так как у него тоже есть одна единица свободного места с каждой из сторон.
+        </li>
+      <li>
+        <code>space-evenly</code> — элементы распределены таким образом, что свободное пространство между любыми двумя элементами равномерно, как и место до границы края контейнера.</li>
+      </ul>
+    </div>
+   </div>
   </body>
 </html>
