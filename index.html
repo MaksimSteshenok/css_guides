@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Руководство по FLEXBOX</h1>
+      <details>
+        <summary>
+          <h2>Введение</h2>
+        </summary>
+        <p>
+          <strong>Flexbox</strong> разметка в CSS даёт один из наиболее
+          эффективных способов расстановки, выравнивания и распределения места
+          между элементами внутри контейнера, даже если их размер неизвестен или
+          динамичен (собственно, по этому его и называют flex, от слова
+          flexible, что по-английски имеет двойственное значение — гибкий и
+          уступчивый, что очень сочетается с моделью поведения flexbox).
+          Основной целью flexbox является предоставление возможности изменения
+          своих элементов по ширине и высоте, для того, чтобы они максимально
+          эффективно умещались в доступном месте родительского контейнера, в
+          частности — это удобно в тех случаях, когда нужно соответствовать всем
+          типам дисплеев устройств и размерам экранов. Flex контейнер расширяет
+          вложенные элементы для того, чтобы заполнить доступное пространство
+          или же урезает их, чтобы избежать переполнения. Очень важный момент,
+          flexbox независим от направления, в отличие от обычных шаблонов,
+          блочная модель основана на вертикальном размещении элементов, а
+          инлайновая на горизонтальной. Пока это достаточно хорошо работало на
+          простых страницах (и сайтах), эти недостатки в гибкости довольно
+          сильно влияли на поддержку больших и сложных приложений, особенно
+          когда дело касалось смены ориентирования, ресайзинга, растягивания или
+          наоборот сокращения элементов. Учтите, что Flexbox лучше всего
+          подходит для компонентов в приложении и для не масштабных шаблонов.
+          Существует Grid модель разметки, которая предназначена для работы с
+          большими шаблонами и комплексными приложениями.
+          <!--Именно этот
+          момент очень хорошо и доступно расписан в статьях — Решающая CSS
+          битва: Grid против Flexbox и Когда нужно использовать Flexbox-->
+        </p>
+      </details>
+      <details>
+        <summary>
+          <h2>Основы и терминология</h2>
+        </summary>
+        <p>
+          Так как flexbox является полноценным модулем, а не простым свойством,
+          он включает в себя множество интересного, а в частности полный набор
+          рабочих свойств. Некоторые из них созданы для использования на
+          контейнере (родительский элемент, известный как flex-container), в то
+          время как другие должны помогать исполнять свои роли дочерним
+          элементам. Если обычный шаблон основан как на блочных, так и на
+          инлайновых элементах, формирующих поток, то flex-шаблон основан на
+          нескольких потоках. Посмотрите на это изображение, наглядно
+          показывающее основную идею flex шаблонизации.
+        </p>
+        <img
+          src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg"
+          alt=""
+        />
+        <p>
+          Элементы в flexbox могут располагаться вдоль основной оси
+          <code>main axis</code> (от <code>main-start</code> до
+          <code>main-end</code>) или же вдоль поперечной оси
+          <code>cross axis</code> ( от <code>cross-start</code> до
+          <code>cross-end</code> ).
+        </p>
+        <ul class="list">
+          <li>
+            <strong>main axis</strong> - основная ось flex контейнера, вдоль
+            которой располагаются flex элементы. Обратите внимание, что ей
+            необязательно быть горизонтальной, все зависит от свойства
+            <code>flex-direction</code> о котором вы прочитаете позже.
+          </li>
+          <li>
+            <strong>main-start | main-end</strong> - Flex элементы расположены в
+            рамках контейнера, начиная от <code>main-start</code> и заканчивая
+            <code>main-end</code>.
+          </li>
+          <li>
+            <strong>main size</strong> - высота или ширина flex элемента, что
+            зависит от того, в каком направлении идёт основная ось.
+          </li>
+          <li>
+            <strong>cross axis</strong> - ось перпендикулярная главной оси,
+            называется поперечной. Её направление зависит от направления главной
+            оси.
+          </li>
+          <li>
+            <strong>cross-start | cross-end</strong> - flex линии, заполненные
+            элементами и расположенные в контейнере от
+            <code>cross-start</code> до <code>cross-end</code>.
+          </li>
+          <li>
+            <strong>cross size</strong> - ширина или высота flex-элемента, в
+            зависимости от направления главной оси, что зависит от свойства
+            <code>flex-direction</code>.
+          </li>
+        </ul>
+      </details>
+      <div class="block-info">
+        <div class="block-info__img">
+          <img
+            src="https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg"
+            alt=""
+          />
+        </div>
+        <div class="info-title">
+          <h2 class="title">Свойства родительских элементов (flex-container)</h2>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#display</h3>
+          <p>Это свойство создаёт сам flex контейнер, инлайновый или блочный, в зависимости от заданного значения. Также оно задает flex-контекст каждому прямому потомку.</p>
+          <pre>
+            <code>
+    .container <span class="span-punctuation">{</span>
+      <span class="span-property">display</span><span class="span-punctuation">:</span> flex<span class="span-punctuation">;</span><span class="comment">/* or inline-flex */</span>
+    <span class="span-punctuation">}</span>
+            </code>
+          </pre>
+        <p>Учтите, что CSS колонки не имеют эффекта на flex контейнер.</p>
+      </div>
+      <div class="info-text">
+        <h3 class="title">#flex-direction</h3>
+        <div class="block-info__img">
+          <img
+            src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg"
+            alt=""
+          />
+        </div>
+        <p>Устанавливает направление главной оси и определяет направление flex элементов размещенных в flex контейнере. Flexbox это односторонняя концепция представления шаблонизации. Поэтому flex элементы располагаются, в основном, вдоль горизонтальной или поперечной линии.</p>
+        <pre>
+          <code>
+  .container <span class="span-punctuation">{</span>
+    <span class="span-property">flex-direction</span><span class="span-punctuation">:</span> row | row-reverse | column | column-reverse<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+          </code>
+        </pre>
+      <ul class="list">
+        <li><code>row</code> (стандартное положение) — слева направо.
+         </li>
+        <li><code>row-reverse</code> — элементы располагаются справа налево.
+          </li>
+        <li><code>column</code> — тоже самое, что и row, только сверху вниз.
+          </li>
+        <li><code>column-reverse</code> — тоже самое, что и row-reverse, но снизу вверх.</li>
+      </ul>
+    </div>
+    </div>
+    
+  </body>
+</html>
