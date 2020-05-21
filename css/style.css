@@ -11,6 +11,10 @@ body {
   font-size: calc(14px + 6 * (100vw / 1280));
 }
 
+a {
+  color: #2e3f3e;
+}
+
 h1,
 h2,
 h3,
@@ -58,6 +62,7 @@ summary {
 p {
   color: #2e3f3e;
   font-size: calc(14px + 6 * (100vw / 1280));
+  margin-bottom: 10px;
 }
 
 code {
@@ -67,7 +72,7 @@ code {
 }
 
 .list {
-  padding-left: 16px;
+  /* padding-left: 16px; */
   margin: 20px 0 25px;
 }
 
@@ -79,7 +84,7 @@ code {
 
 .list li::before {
   content: "•";
-  margin-right: 8px;
+  margin-right: 4px;
   color: #5e5373;
 }
 
@@ -113,4 +118,14 @@ pre code {
 .comment {
   color: #5e7671;
   font-style: italic;
+}
+.media {
+  color: #83ba52;
+}
+.values {
+  color: #aa7ee1;
+}
+
+iframe {
+  margin: 10px 0px 20px;
 }
