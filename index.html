@@ -267,7 +267,7 @@
       <pre>
         <code>
 .container <span class="span-punctuation">{</span>
-  <span class="span-property">align-items</span><span class="span-punctuation">:</span> stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe<span class="span-punctuation">;</span>
+  <span class="span-property">align-content</span><span class="span-punctuation">:</span> stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
@@ -302,8 +302,270 @@
         />
     </div>
     <div class="info-title">
-          <h2 class="title">Свойства дочерних элементов (flex items)</h2>
-        </div>
+      <h2 class="title">Свойства дочерних элементов (flex items)</h2>
+    </div>
+    <div class="info-text">
+      <h3 class="title">#order</h3>
+      <div class="block-info__img">
+        <img
+          src="https://css-tricks.com/wp-content/uploads/2018/10/order.svg"
+          alt=""
+        />
+    </div>
+      <p>По-дефолту, флекс элементы располагаются в исходном порядке 1, 2, 3 и т.д. Однако, свойство order контролирует порядок в котором элементы могут располагаться.</p>
+      <pre>
+        <code>
+.item <span class="span-punctuation">{</span>
+  <span class="span-property">order</span><span class="span-punctuation">:</span> <любое целое число>; /* дефолтное 0 */<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+    </div>
+    <div class="info-text">
+      <h3 class="title">#flex-grow</h3>
+      <div class="block-info__img">
+        <img
+          src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg"
+          alt=""
+        />
+    </div>
+      <p>Это свойство определяет способность flex элемента при необходимости увеличиваться. 0 запрещено, 1 разрешено. Оно принимает безразмерное значение, которое служит пропорцией или долей. Оно указывает какое количество свободного места внутри контейнера элемент должен взять.
+      Если все элементы в контейнере имеют flex-grow со значением 1, то это означает то, что оставшееся место в нём распределено в равной мере среди потомков. Также, помните, что оно не принимает негативных значений.</p>
+      <pre>
+        <code>
+.item <span class="span-punctuation">{</span>
+  <span class="span-property">flex-grow</span><span class="span-punctuation">:</span> <число>; /* дефолтное 0 */<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+    </div>
+    <div class="info-text">
+      <h3 class="title">#flex-shrink</h3>
+      <p>Это свойство определяет способность flex элемента уменьшаться при необходимости. 0 запрещено, 1 разрешено. Оно также не принимает отрицательных значений.</p>
+      <pre>
+        <code>
+.item <span class="span-punctuation">{</span>
+  <span class="span-property">flex-shrink</span><span class="span-punctuation">:</span> <число>; /* дефолтное 1 */<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+    </div>
+    <div class="info-text">
+      <h3 class="title">#flex-basis</h3>
+      <p>Это свойство определяет стандартный размер элемента, перед тем как оставшееся место будет распределено. Это может быть длина (20%, 5rem и тп) или ключевое значение. Flex-элемент будет занимать размер в зависимости от контента внутри него. Ключевое значение auto означает «эй, посмотрите на мои свойства ширины и высоты» (этим раньше занималось свойство <code>main-size</code>, пока не устарело и не было удалено). Значение <code>content</code> означает, что размер основывается на контенте элемента — это свойство пока что не очень хорошо поддерживается, поэтому его очень тяжело протестировать и довольно сложно понять, что делают его собратья, такие как <code>max-content, min-content</code> и <code>fit-content</code>.</p>
+      <pre>
+        <code>
+.item <span class="span-punctuation">{</span>
+  <span class="span-property">flex-basis</span><span class="span-punctuation">:</span> <длина> | auto; /* дефолтное auto */<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <p>Если выставить значение на <code>0</code>, то дополнительное место вокруг контента не будет учтено. Если выставить на <code>auto</code>, то дополнительное свободное место будет распространяться, основываясь на его <code>flex-grow</code> значении. В общем, посмотрите график ниже.</p>
+      <div class="block-info__img">
+        <img
+          src="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="info-text">
+      <h3 class="title">#flex</h3>
+      <p>Это сокращение для <code>flex-grow</code>, <code>flex-shrink</code> и <code>flex-basis</code> — все вместе взятые. Второй и третий параметры опциональны, то есть <code>flex-shrink</code> и <code>flex-basis</code>. По-дефолту оно имеет значение <code>0 1 auto</code>.</p>
+      <pre>
+        <code>
+.item <span class="span-punctuation">{</span>
+  <span class="span-property">flex</span><span class="span-punctuation">:</span> <длина> none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <p>Рекомендуется использовать сокращенное свойство, вместо набора индивидуальных свойств.</p>
+      <div class="block-info__img">
+        <img
+          src="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="info-text">
+      <h3 class="title">#align-self</h3>
+      <div class="block-info__img">
+        <img
+          src="https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg"
+          alt=""
+        />
+      </div>
+      <p>Это свойство позволяет стандартному выравниванию (или если точно <code>align-items</code> ) элементов, быть перезаписанному для определенного <code>flex</code> элемента.
+      Чтобы увидеть все значения <code>align-self</code>, посмотрите их в <code>align-items</code>.</p>
+      <pre>
+        <code>
+.item <span class="span-punctuation">{</span>
+  <span class="span-property">align-self</span><span class="span-punctuation">:</span> <длина> auto | flex-start | flex-end | center | baseline | stretch<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <p>Примите во внимание, что <code>float</code>, <code>clear</code> и <code>vertical-align</code> не имеют эффекта на <code>flex</code> элементы.</p>
+    </div>
+    <div class="info-title">
+      <h2 class="title">Примеры</h2>
+    </div>
+    <p>Давайте начнем с очень очень простого примера, решающего ежедневную проблему — идеальное центрирование.</p>
+    <pre>
+        <code>
+.parent <span class="span-punctuation">{</span>
+  <span class="span-property">display</span><span class="span-punctuation">:</span> flex<span class="span-punctuation">;</span>
+  <span class="span-property">height</span><span class="span-punctuation">:</span> 300px<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+
+.child <span class="span-punctuation">{</span>
+  <span class="span-property">width</span><span class="span-punctuation">:</span> 100px<span class="span-punctuation">;</span>
+  <span class="span-property">height</span><span class="span-punctuation">:</span> 100px<span class="span-punctuation">;</span>
+  <span class="span-property">margin</span><span class="span-punctuation">:</span> auto<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <p>Суть в том, что <code>margin</code> с параметром auto в <code>flex</code> контейнере поглощает свободное пространство. Таким образом, выставляя вертикальный отступ на <code>auto</code>, вы заставите элементы идеально сцентрироваться по двум осям.</p>
+      <p>Теперь давайте возьмем другие свойства. Рассмотрим список из шести элементов, с фиксированными размерами для эстетического вида, но они могут автоматически менять размер. Мы бы хотели, чтобы они были равномерно и хорошо распределены по горизонтальной оси, таким образом, чтобы при изменении размера окна браузера, все было гладко. И это <strong>без медиа запросов</strong>.</p>
+      <pre>
+        <code>
+.flex-container <span class="span-punctuation">{</span>
+  <span class="comment">/* Сначала зададим контейнеру flex контекст */</span>
+  <span class="span-property">display</span><span class="span-punctuation">:</span> flex<span class="span-punctuation">;</span>
+  <span class="comment">/* Далее определим направление главной оси 
+    и можно ли элементам переноситься на другую строку 
+   * Помните, что это одно и тоже:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */</span>
+  <span class="span-property">flex-flow</span><span class="span-punctuation">:</span> no-wrap<span class="span-punctuation">;</span>
+  <span class="comment">/* Далее мы определим каким образом будет распределено оставшееся место */</span>
+  <span class="span-property">justify-content</span><span class="span-punctuation">:</span> space-around<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <p>Сделано! Все остальное это проблемы стилей. Ниже вы сможете видеть работу этого примера. Вообще пройдите на сам сайт, чтобы по изменять размеры окон и понаблюдать то, что происходит.</p>
+      <iframe id="cp_embed_EKEYob" class="cp_embed_iframe" style="width: 100%; overflow: hidden;" title="CodePen Embed EKEYob" src="https://codepen.io/anon/embed/EKEYob?height=450&amp;theme-id=1&amp;slug-hash=EKEYob&amp;default-tab=result" name="CodePen Embed EKEYob" height="450" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen">CodePen Embed Fallback</iframe>
+      <p>Давайте еще что-нибудь попробуем. Представьте, что у вас есть выровненная по правому борту навигация, находящаяся на самом верху вашего сайта, но вы хотите, чтобы она центрировалась на среднеразмерных экранах и была одной колонкой на совсем маленьких устройствах. Это сделать довольно просто.</p>
+      <pre>
+        <code>
+  <span class="comment">/* Большие экраны */</span>         
+.navigation  <span class="span-punctuation">{</span>
+  <span class="span-property">display</span><span class="span-punctuation">:</span> flex<span class="span-punctuation">;</span>
+  <span class="span-property">flex-flow</span><span class="span-punctuation">:</span> row wrap<span class="span-punctuation">;</span>
+  <span class="comment">/* Выставляет элементы к концу строки по главной оси */</span>
+  <span class="span-property">justify-content</span><span class="span-punctuation">:</span> space-end<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+<span class="comment">/* Средние экраны */</span>
+  <span class="media">@media all and (max-width: 800px)</span><span class="span-punctuation"> {</span>         
+.navigation  <span class="span-punctuation">{</span>
+  <span class="comment">/* На экранах средних размеров мы их равномерно центрируем, 
+    распределяя между ними пустое место */</span>
+  <span class="span-property">justify-content</span><span class="span-punctuation">:</span> space-around<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+<span class="span-punctuation">}</span>
+<span class="comment">/* Маленькие экраны */</span>
+  <span class="media">@media all and (max-width: 500px)</span><span class="span-punctuation"> {</span>         
+.navigation  <span class="span-punctuation">{</span>
+  <span class="comment">/* На малых экранах мы выставляем элементы в колонку */</span>
+  <span class="span-property">flex-direction</span><span class="span-punctuation">:</span> column<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <iframe id="cp_embed_YqaKYR" class="cp_embed_iframe" style="width: 100%; overflow: hidden;" title="CodePen Embed YqaKYR" src="https://codepen.io/anon/embed/YqaKYR?height=250&amp;theme-id=1&amp;slug-hash=YqaKYR&amp;default-tab=result" name="CodePen Embed YqaKYR" height="250" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen">CodePen Embed Fallback</iframe>
+      <p>Давайте попробуем что-нибудь ещё интереснее, пока играемся с flex’ами! Как насчет ориентированного на мобильные устройства трех-колоночного шаблона с шапкой и подвалом на всю ширину экрана? И всё это вне зависимости от порядка элементов. Интересно?</p>
+      <pre>
+        <code>
+.wrapper <span class="span-punctuation">{</span>
+  <span class="span-property">display</span><span class="span-punctuation">:</span> flex<span class="span-punctuation">;</span>
+  <span class="span-property">flex-flow</span><span class="span-punctuation">:</span> row wrap<span class="span-punctuation">;</span>
+
+.wrapper > * <span class="span-punctuation">{</span>
+  <span class="comment">/* Мы указываем всем элементам ширину 100% */</span>
+  <span class="span-property">flex</span><span class="span-punctuation">:</span> 1 100%<span class="span-punctuation">;</span>
+<span class="span-punctuation">}</span>
+  <span class="comment">/* Мы полагаемся на исходный порядок для мобильного подхода к делу
+* В этом случае он такой:
+* 1. header
+* 2. article
+* 3. aside 1
+* 4. aside 2
+* 5. footer
+*/</span>
+  <span class="comment">/* Средние экраны */</span>
+  <span class="media">@media all and (min-width: 600px)</span><span class="span-punctuation"> {</span>         
+.navigation  <span class="span-punctuation">{</span>
+  <span class="comment">/* Мы указываем двум сайдбарам разделить строку */</span>
+.aside <span class="span-punctuation">{</span>
+  <span class="span-property">flex</span><span class="span-punctuation">:</span> 1 auto<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+<span class="span-punctuation">}</span>
+  <span class="comment">/* Большие экраны */</span>
+  <span class="media">@media all and (min-width: 800px)</span><span class="span-punctuation"> {</span>         
+.navigation  <span class="span-punctuation">{</span>
+  <span class="comment">/* Мы меняем порядок первого сайдбара и main* 
+    И указываем главному элементу взять в два раза больше ширины
+    чем другие два сайдбара.*/</span>
+.main  <span class="span-punctuation">{</span>
+  <span class="span-property">flex</span><span class="span-punctuation">:</span> 2 0px<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+.aside-1 <span class="span-punctuation">{</span>
+  <span class="span-property">order</span><span class="span-punctuation">:</span> 1<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+.main <span class="span-punctuation">{</span>
+  <span class="span-property">order</span><span class="span-punctuation">:</span> 2<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+.aside-2 <span class="span-punctuation">{</span>
+  <span class="span-property">order</span><span class="span-punctuation">:</span> 3<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+  .footer <span class="span-punctuation">{</span>
+  <span class="span-property">order</span><span class="span-punctuation">:</span> 4<span class="span-punctuation">;</span>
+  <span class="span-punctuation">}</span>
+<span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <iframe id="cp_embed_vWEMWw" class="cp_embed_iframe" style="width: 100%; overflow: hidden;" title="CodePen Embed vWEMWw" src="https://codepen.io/anon/embed/vWEMWw?height=350&amp;theme-id=1&amp;slug-hash=vWEMWw&amp;default-tab=result" name="CodePen Embed vWEMWw" height="350" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen">CodePen Embed Fallback</iframe>
+      <h2 class="title">Префиксы Flexbox</h2>
+      <p>Flexbox нужны вендорные префиксы для поддержки большинства браузеров. Они не только включают добавленные сначала свойства с вендорным префиксом, тут есть аж целые специальные свойства и названия значений. Так получилось, потому что спецификация flexbox изменялась, создавая «старые», «промежуточные» и «новые» версии.
+      Возможно, лучшим решением является написание кода на последней версии синтаксиса и перезапуск вашего CSS через автопрефиксер, который очень хорошо справляется с добавлением фолбэков.
+      Более того, есть Sass примеси, чтобы помочь с некоторыми префиксерами, которые также дают вам представление о том, что вам нужно сделать.</p>
+      <pre>
+        <code>
+  <span class="media">@mixin</span> flexbox <span class="span-punctuation">() {</span>
+    <span class="span-property">display:</span> -webkit-box<span class="span-punctuation">;</span>
+    <span class="span-property">display:</span> -moz-box<span class="span-punctuation">;</span>
+    <span class="span-property">display:</span> -ms-flexbox<span class="span-punctuation">;</span>
+    <span class="span-property">display:</span> -webkit-flex<span class="span-punctuation">;</span>
+    <span class="span-property">display:</span> flex<span class="span-punctuation">;</span>
+    <span class="span-punctuation">}</span>
+
+  <span class="media">@mixin</span> flex<span class="span-punctuation">(<span class="values">$values</span>) {</span>
+    <span class="span-property">-webkit-box-flex:</span> <span class="values">$values</span><span class="span-punctuation">;</span>
+    <span class="span-property">-moz-box-flex:</span> <span class="values">$values</span><span class="span-punctuation">;</span>
+    <span class="span-property">-webkit-flex:</span> <span class="values">$values</span><span class="span-punctuation">;</span>
+    <span class="span-property">-ms-flex:</span> <span class="values">$values</span><span class="span-punctuation">;</span>
+    <span class="span-property">flex:</span> <span class="values">$values</span><span class="span-punctuation">;</span>
+    <span class="span-punctuation">}</span>
+
+  <span class="media">@mixin</span> order<span class="span-punctuation">(<span class="values">$val</span>) {</span>
+    <span class="span-property">-webkit-box-ordinal-group:</span> <span class="values">$val</span><span class="span-punctuation">;</span>
+    <span class="span-property">-moz-box-ordinal-group:</span> <span class="values">$val</span><span class="span-punctuation">;</span>
+    <span class="span-property">-ms-flex-order:</span> <span class="values">$val</span><span class="span-punctuation">;</span>
+    <span class="span-property">-webkit-order:</span> <span class="values">$val</span><span class="span-punctuation">;</span>
+    <span class="span-property">order:</span> <span class="values">$val</span><span class="span-punctuation">;</span>
+    <span class="span-punctuation">}</span>
+
+  .wrapper <span class="span-punctuation">{</span>
+    <span class="media">@include</span> flexbox<span class="span-punctuation">()</span><span class="span-punctuation">;</span>
+    <span class="span-punctuation">}</span>
+
+  .item <span class="span-punctuation">{</span>
+    <span class="media">@include</span> flex<span class="span-punctuation">(1 200px)</span><span class="span-punctuation">;</span>
+    <span class="media">@include</span> order<span class="span-punctuation">(2)</span><span class="span-punctuation">;</span>
+    <span class="span-punctuation">}</span>
+        </code>
+      </pre>
+      <h3 class="title">Баги</h3>
+      <p>Flexbox определенно не без багов. Лучшая их коллекция находится <a href="https://github.com/philipwalton/flexbugs"><strong>тут</strong></a>. Это open source пространство, где вы сможете отслеживать их новые появления.</p>
    </div>
   </body>
 </html>
