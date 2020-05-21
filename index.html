@@ -114,11 +114,17 @@
           />
         </div>
         <div class="info-title">
-          <h2 class="title">Свойства родительских элементов (flex-container)</h2>
+          <h2 class="title">
+            Свойства родительских элементов (flex-container)
+          </h2>
         </div>
         <div class="info-text">
           <h3 class="title">#display</h3>
-          <p>Это свойство создаёт сам flex контейнер, инлайновый или блочный, в зависимости от заданного значения. Также оно задает flex-контекст каждому прямому потомку.</p>
+          <p>
+            Это свойство создаёт сам flex контейнер, инлайновый или блочный, в
+            зависимости от заданного значения. Также оно задает flex-контекст
+            каждому прямому потомку.
+          </p>
           <pre>
             <code>
 .container <span class="span-punctuation">{</span>
@@ -126,290 +132,438 @@
 <span class="span-punctuation">}</span>
             </code>
           </pre>
-        <p>Учтите, что CSS колонки не имеют эффекта на flex контейнер.</p>
-      </div>
-      <div class="info-text">
-        <h3 class="title">#flex-direction</h3>
-        <div class="block-info__img">
-          <img
-            src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg"
-            alt=""
-          />
+          <p>Учтите, что CSS колонки не имеют эффекта на flex контейнер.</p>
         </div>
-        <p>Устанавливает направление главной оси и определяет направление flex элементов размещенных в flex контейнере. Flexbox это односторонняя концепция представления шаблонизации. Поэтому flex элементы располагаются, в основном, вдоль горизонтальной или поперечной линии.</p>
-        <pre>
+        <div class="info-text">
+          <h3 class="title">#flex-direction</h3>
+          <div class="block-info__img">
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg"
+              alt=""
+            />
+          </div>
+          <p>
+            Устанавливает направление главной оси и определяет направление flex
+            элементов размещенных в flex контейнере. Flexbox это односторонняя
+            концепция представления шаблонизации. Поэтому flex элементы
+            располагаются, в основном, вдоль горизонтальной или поперечной
+            линии.
+          </p>
+          <pre>
           <code>
 .container <span class="span-punctuation">{</span>
   <span class="span-property">flex-direction</span><span class="span-punctuation">:</span> row | row-reverse | column | column-reverse<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
           </code>
         </pre>
-      <ul class="list">
-        <li><code>row</code> (стандартное положение) — слева направо.
-         </li>
-        <li><code>row-reverse</code> — элементы располагаются справа налево.
-          </li>
-        <li><code>column</code> — тоже самое, что и row, только сверху вниз.
-          </li>
-        <li><code>column-reverse</code> — тоже самое, что и row-reverse, но снизу вверх.</li>
-      </ul>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#flex-wrap</h3>
-      <div class="block-info__img">
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/flex-wrap.svg"
-          alt=""
-        />
-      </div>
-      <pre>
+          <ul>
+            <li><code>row</code> (стандартное положение) — слева направо.</li>
+
+            <li>
+              <code>row-reverse</code> — элементы располагаются справа налево.
+            </li>
+
+            <li>
+              <code>column</code> — тоже самое, что и row, только сверху вниз.
+            </li>
+
+            <li>
+              <code>column-reverse</code> — тоже самое, что и row-reverse, но снизу вверх.
+            </li>
+          </ul>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#flex-wrap</h3>
+          <div class="block-info__img">
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2018/10/flex-wrap.svg"
+              alt=""
+            />
+          </div>
+          <pre>
         <code>
 .container <span class="span-punctuation">{</span>
   <span class="span-property">flex-wrap</span><span class="span-punctuation">:</span> nowrap | wrap | wrap-reverse<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <p>Изначально все flex-элементы будут пытаться уместиться в одну строку. Вы можете поменять это и дать возможность этим элементам переходить на другую строку, при необходимости.</p>
-      <p><code>nowrap</code> — это значение по-дефолту, при котором все flex элементы будут выстраиваться в одну линию.</p>
-      <p><code>wrap</code> — flex элементы будут переноситься на несколько строк, от верха к низу.</p>
-      <p><code>wrap-reverse</code> — flex элементы будут переноситься на несколько строк снизу вверх.</p>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#flex-flow (применяется для родительского flex контейнера)</h3>
-      <p>Это сокращение <code>flex-direction</code> и <code>flex-wrap</code> свойств, которые вместе определяют направление главной и поперечной оси. По-дефолту оно имеет значение <code>row nowrap</code>.</p>
-      <pre>
+          <p>
+            Изначально все flex-элементы будут пытаться уместиться в одну
+            строку. Вы можете поменять это и дать возможность этим элементам
+            переходить на другую строку, при необходимости.
+          </p>
+          <p>
+            <code>nowrap</code> — это значение по-дефолту, при котором все flex
+            элементы будут выстраиваться в одну линию.
+          </p>
+          <p>
+            <code>wrap</code> — flex элементы будут переноситься на несколько
+            строк, от верха к низу.
+          </p>
+          <p>
+            <code>wrap-reverse</code> — flex элементы будут переноситься на
+            несколько строк снизу вверх.
+          </p>
+        </div>
+        <div class="info-text">
+          <h3 class="title">
+            #flex-flow (применяется для родительского flex контейнера)
+          </h3>
+          <p>
+            Это сокращение <code>flex-direction</code> и
+            <code>flex-wrap</code> свойств, которые вместе определяют
+            направление главной и поперечной оси. По-дефолту оно имеет значение
+            <code>row nowrap</code>.
+          </p>
+          <pre>
         <code>
 .container <span class="span-punctuation">{</span>
   <span class="span-property">flex-flow</span><span class="span-punctuation">:</span> <'flex-direction'> || <'flex-wrap'><span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#justify-content</h3>
-      <div class="block-info__img">
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg"
-          alt=""
-        />
-      </div>
-      <p>Свойство определяет выравнивание вдоль главной оси. Оно помогает распределить лишнее свободное пространство, когда, либо все flex элементы в линии имеют фиксированный размер, либо же нет, но уже достигли своего максимального размера. Оно также влияет на выравнивание элементов, когда те переполнят строку.</p>
-      <pre>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#justify-content</h3>
+          <div class="block-info__img">
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg"
+              alt=""
+            />
+          </div>
+          <p>
+            Свойство определяет выравнивание вдоль главной оси. Оно помогает
+            распределить лишнее свободное пространство, когда, либо все flex
+            элементы в линии имеют фиксированный размер, либо же нет, но уже
+            достигли своего максимального размера. Оно также влияет на
+            выравнивание элементов, когда те переполнят строку.
+          </p>
+          <pre>
         <code>
 .container <span class="span-punctuation">{</span>
   <span class="span-property">justify-content</span><span class="span-punctuation">:</span> flex-start | flex-end | center | space-between | space-around | space-evenly<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-    <ul class="list">
-      <li>
-        <code>flex-start</code> — дефолтное состояние, при котором элементы расставляются от начала строки.
-      </li>
-      <li>
-        <code>flex-end</code> — состояние, в котором Flex-элементы прижимаются к концу основной оси.
-      </li>
-      <li>
-        <code>center</code> — Flex-элементы располагаются по центру основной оси.</li>
-      <li>
-        <code>space-between</code> — Flex-элементы располагаются равномерно по основной оси. Первый элемент находится в начале оси, последний элемент находится в конце оси.
-       </li>
-      <li>
-        <code>space-around</code> — Flex-элементы располагаются равномерно по основной оси. К каждому flex-элементу добавляется пространство слева и справа. Учтите, что визуально пробелы не равномерны, так как все элементы имеют одинаковые пробелы с двух сторон. Первый элемент получит одну единицу свободного места от границы контейнера, но получит две единицы свободного места от следующего элемента, так как у него тоже есть одна единица свободного места с каждой из сторон.
-        </li>
-      <li>
-        <code>space-evenly</code> — элементы распределены таким образом, что свободное пространство между любыми двумя элементами равномерно, как и место до границы края контейнера.</li>
-      </ul>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#align-items</h3>
-      <div class="block-info__img">
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg"
-          alt=""
-        />
-      </div>
-      <p>Это свойство определяет стандартное поведение того, как flex элементы будут располагаться вдоль поперечной оси на заданной строке. Это своебразная версия <code>justify-content</code>, но только для поперечной оси, которая перпендикулярна главной.</p>
-      <pre>
+          <ul>
+            <li>
+              <code>flex-start</code> — дефолтное состояние, при котором
+              элементы расставляются от начала строки.
+            </li>
+            <li>
+              <code>flex-end</code> — состояние, в котором Flex-элементы
+              прижимаются к концу основной оси.
+            </li>
+            <li>
+              <code>center</code> — Flex-элементы располагаются по центру
+              основной оси.
+            </li>
+            <li>
+              <code>space-between</code> — Flex-элементы располагаются
+              равномерно по основной оси. Первый элемент находится в начале оси,
+              последний элемент находится в конце оси.
+            </li>
+            <li>
+              <code>space-around</code> — Flex-элементы располагаются равномерно
+              по основной оси. К каждому flex-элементу добавляется пространство
+              слева и справа. Учтите, что визуально пробелы не равномерны, так
+              как все элементы имеют одинаковые пробелы с двух сторон. Первый
+              элемент получит одну единицу свободного места от границы
+              контейнера, но получит две единицы свободного места от следующего
+              элемента, так как у него тоже есть одна единица свободного места с
+              каждой из сторон.
+            </li>
+            <li>
+              <code>space-evenly</code> — элементы распределены таким образом,
+              что свободное пространство между любыми двумя элементами
+              равномерно, как и место до границы края контейнера.
+            </li>
+          </ul>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#align-items</h3>
+          <div class="block-info__img">
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg"
+              alt=""
+            />
+          </div>
+          <p>
+            Это свойство определяет стандартное поведение того, как flex
+            элементы будут располагаться вдоль поперечной оси на заданной
+            строке. Это своебразная версия <code>justify-content</code>, но
+            только для поперечной оси, которая перпендикулярна главной.
+          </p>
+          <pre>
         <code>
 .container <span class="span-punctuation">{</span>
   <span class="span-property">align-items</span><span class="span-punctuation">:</span> stretch | flex-start | flex-end | center | baseline<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-    <ul class="list">
-      <li>
-        <code>flex-start</code> — Flex-элементы прижимаются к началу поперечной оси.
-      </li>
-      <li>
-        <code>flex-end</code> — Flex-элементы прижимаются к концу поперечной оси.
-      </li>
-      <li>
-        <code>center</code> — Flex-элементы располагаются по центру поперечной оси.
-      </li>
-      <li>
-        <code>baseline</code> — Flex-элементы располагаются по базовой линии.
-       </li>
-      <li>
-        <code>stretch</code> — Значение по умолчанию (не нужно указывать), это дефолтное состояние, при котором элементы заполяют контейнер, с учетом min-width и max-width.
-      </li>
-    </ul>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#align-content</h3>
-      <div class="block-info__img">
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg"
-          alt=""
-        />
-      </div>
-      <p>Это свойство выравнивает и распределяет строки контейнера, когда есть свободное пространство в поперечной оси, подобно тому как <code>justify-content</code>, оно выравнивает элементы по главной оси.
-Учтите, что это свойство не приности эффекта, когда есть только одна строка flex элементов.</p>
-      <pre>
+          <ul>
+            <li>
+              <code>flex-start</code> — Flex-элементы прижимаются к началу
+              поперечной оси.
+            </li>
+            <li>
+              <code>flex-end</code> — Flex-элементы прижимаются к концу
+              поперечной оси.
+            </li>
+            <li>
+              <code>center</code> — Flex-элементы располагаются по центру
+              поперечной оси.
+            </li>
+            <li>
+              <code>baseline</code> — Flex-элементы располагаются по базовой
+              линии.
+            </li>
+            <li>
+              <code>stretch</code> — Значение по умолчанию (не нужно указывать),
+              это дефолтное состояние, при котором элементы заполяют контейнер,
+              с учетом min-width и max-width.
+            </li>
+          </ul>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#align-content</h3>
+          <div class="block-info__img">
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg"
+              alt=""
+            />
+          </div>
+          <p>
+            Это свойство выравнивает и распределяет строки контейнера, когда
+            есть свободное пространство в поперечной оси, подобно тому как
+            <code>justify-content</code>, оно выравнивает элементы по главной
+            оси. Учтите, что это свойство не приности эффекта, когда есть только
+            одна строка flex элементов.
+          </p>
+          <pre>
         <code>
 .container <span class="span-punctuation">{</span>
   <span class="span-property">align-content</span><span class="span-punctuation">:</span> stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-    <ul class="list">
-      <li>
-        <code>stretch</code> — Значение по умолчанию. Строки флекс-элементов равномерно растягиваются, заполняя все доступное пространство.
-      </li>
-      <li><code>flex-start / start</code> - Строки флекс-элементов выравниваются по левому краю контейнера относительно его верхнего края.</li>
-      <li>
-        <code>flex-end / end</code> — Строки флекс-элементов выравниваются по левому краю контейнера относительно его нижнего края.
-      </li>
-      <li>
-        <code>center</code> — Строки флекс-элементов выравниваются по высоте по середине контейнера относительно его левого края.
-      </li>
-      <li>
-        <code>space-between</code> — Строки флекс-элементов выравниваются по высоте по середине контейнера относительно его левого края. Свободное пространство распределяется между ними. Первый ряд флекс-элементов прижимается к началу контейнера, последний ряд - к нижнему краю.
-       </li>
-      <li>
-        <code>space-around</code> — Строки флекс-элементов равномерно распределяются по высоте, свободное пространство добавляется сверху и снизу строки.
-      </li>
-      <li><code>space-evenly</code> - Строки равномерно распределяются таким образом, чтобы пространство между двумя соседними строками, а также пространство перед первой строкой и после последней строки было одинаковым.</li>
-    </ul>
-    <code>safe</code>
-      <p>Используется вместе с ключевым словом выравнивания. Если выбранное ключевое слово означает, что элемент переполняет контейнер выравнивания, что приводит к потере данных, вместо этого элемент выравнивается, как если бы режим выравнивания был <code>start</code>.</p>
-      <code>unsafe</code>
-      <p>Используется вместе с ключевым словом выравнивания. Независимо от относительных размеров элемента и контейнера выравнивания и от того, может ли произойти переполнение, которое приводит к потере данных, данное значение выравнивания учитывается.</p>
-    </div>
-    <div class="block-info__img">
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg"
-          alt=""
-        />
-    </div>
-    <div class="info-title">
-      <h2 class="title">Свойства дочерних элементов (flex items)</h2>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#order</h3>
-      <div class="block-info__img">
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/order.svg"
-          alt=""
-        />
-    </div>
-      <p>По-дефолту, флекс элементы располагаются в исходном порядке 1, 2, 3 и т.д. Однако, свойство order контролирует порядок в котором элементы могут располагаться.</p>
-      <pre>
+          <ul>
+            <li>
+              <code>stretch</code> — Значение по умолчанию. Строки
+              флекс-элементов равномерно растягиваются, заполняя все доступное
+              пространство.
+            </li>
+            <li>
+              <code>flex-start / start</code> - Строки флекс-элементов
+              выравниваются по левому краю контейнера относительно его верхнего
+              края.
+            </li>
+            <li>
+              <code>flex-end / end</code> — Строки флекс-элементов выравниваются
+              по левому краю контейнера относительно его нижнего края.
+            </li>
+            <li>
+              <code>center</code> — Строки флекс-элементов выравниваются по
+              высоте по середине контейнера относительно его левого края.
+            </li>
+            <li>
+              <code>space-between</code> — Строки флекс-элементов выравниваются
+              по высоте по середине контейнера относительно его левого края.
+              Свободное пространство распределяется между ними. Первый ряд
+              флекс-элементов прижимается к началу контейнера, последний ряд - к
+              нижнему краю.
+            </li>
+            <li>
+              <code>space-around</code> — Строки флекс-элементов равномерно
+              распределяются по высоте, свободное пространство добавляется
+              сверху и снизу строки.
+            </li>
+            <li>
+              <code>space-evenly</code> - Строки равномерно распределяются таким
+              образом, чтобы пространство между двумя соседними строками, а
+              также пространство перед первой строкой и после последней строки
+              было одинаковым.
+            </li>
+          </ul>
+          <code>safe</code>
+          <p>
+            Используется вместе с ключевым словом выравнивания. Если выбранное
+            ключевое слово означает, что элемент переполняет контейнер
+            выравнивания, что приводит к потере данных, вместо этого элемент
+            выравнивается, как если бы режим выравнивания был
+            <code>start</code>.
+          </p>
+          <code>unsafe</code>
+          <p>
+            Используется вместе с ключевым словом выравнивания. Независимо от
+            относительных размеров элемента и контейнера выравнивания и от того,
+            может ли произойти переполнение, которое приводит к потере данных,
+            данное значение выравнивания учитывается.
+          </p>
+        </div>
+        <div class="block-info__img">
+          <img
+            src="https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg"
+            alt=""
+          />
+        </div>
+        <div class="info-title">
+          <h2 class="title">Свойства дочерних элементов (flex items)</h2>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#order</h3>
+          <div class="block-info__img">
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2018/10/order.svg"
+              alt=""
+            />
+          </div>
+          <p>
+            По-дефолту, флекс элементы располагаются в исходном порядке 1, 2, 3
+            и т.д. Однако, свойство order контролирует порядок в котором
+            элементы могут располагаться.
+          </p>
+          <pre>
         <code>
 .item <span class="span-punctuation">{</span>
   <span class="span-property">order</span><span class="span-punctuation">:</span> <любое целое число>; /* дефолтное 0 */<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#flex-grow</h3>
-      <div class="block-info__img">
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg"
-          alt=""
-        />
-    </div>
-      <p>Это свойство определяет способность flex элемента при необходимости увеличиваться. 0 запрещено, 1 разрешено. Оно принимает безразмерное значение, которое служит пропорцией или долей. Оно указывает какое количество свободного места внутри контейнера элемент должен взять.
-      Если все элементы в контейнере имеют flex-grow со значением 1, то это означает то, что оставшееся место в нём распределено в равной мере среди потомков. Также, помните, что оно не принимает негативных значений.</p>
-      <pre>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#flex-grow</h3>
+          <div class="block-info__img">
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg"
+              alt=""
+            />
+          </div>
+          <p>
+            Это свойство определяет способность flex элемента при необходимости
+            увеличиваться. 0 запрещено, 1 разрешено. Оно принимает безразмерное
+            значение, которое служит пропорцией или долей. Оно указывает какое
+            количество свободного места внутри контейнера элемент должен взять.
+            Если все элементы в контейнере имеют flex-grow со значением 1, то
+            это означает то, что оставшееся место в нём распределено в равной
+            мере среди потомков. Также, помните, что оно не принимает негативных
+            значений.
+          </p>
+          <pre>
         <code>
 .item <span class="span-punctuation">{</span>
   <span class="span-property">flex-grow</span><span class="span-punctuation">:</span> <число>; /* дефолтное 0 */<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#flex-shrink</h3>
-      <p>Это свойство определяет способность flex элемента уменьшаться при необходимости. 0 запрещено, 1 разрешено. Оно также не принимает отрицательных значений.</p>
-      <pre>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#flex-shrink</h3>
+          <p>
+            Это свойство определяет способность flex элемента уменьшаться при
+            необходимости. 0 запрещено, 1 разрешено. Оно также не принимает
+            отрицательных значений.
+          </p>
+          <pre>
         <code>
 .item <span class="span-punctuation">{</span>
   <span class="span-property">flex-shrink</span><span class="span-punctuation">:</span> <число>; /* дефолтное 1 */<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#flex-basis</h3>
-      <p>Это свойство определяет стандартный размер элемента, перед тем как оставшееся место будет распределено. Это может быть длина (20%, 5rem и тп) или ключевое значение. Flex-элемент будет занимать размер в зависимости от контента внутри него. Ключевое значение auto означает «эй, посмотрите на мои свойства ширины и высоты» (этим раньше занималось свойство <code>main-size</code>, пока не устарело и не было удалено). Значение <code>content</code> означает, что размер основывается на контенте элемента — это свойство пока что не очень хорошо поддерживается, поэтому его очень тяжело протестировать и довольно сложно понять, что делают его собратья, такие как <code>max-content, min-content</code> и <code>fit-content</code>.</p>
-      <pre>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#flex-basis</h3>
+          <p>
+            Это свойство определяет стандартный размер элемента, перед тем как
+            оставшееся место будет распределено. Это может быть длина (20%, 5rem
+            и тп) или ключевое значение. Flex-элемент будет занимать размер в
+            зависимости от контента внутри него. Ключевое значение auto означает
+            «эй, посмотрите на мои свойства ширины и высоты» (этим раньше
+            занималось свойство <code>main-size</code>, пока не устарело и не
+            было удалено). Значение <code>content</code> означает, что размер
+            основывается на контенте элемента — это свойство пока что не очень
+            хорошо поддерживается, поэтому его очень тяжело протестировать и
+            довольно сложно понять, что делают его собратья, такие как
+            <code>max-content, min-content</code> и <code>fit-content</code>.
+          </p>
+          <pre>
         <code>
 .item <span class="span-punctuation">{</span>
   <span class="span-property">flex-basis</span><span class="span-punctuation">:</span> <длина> | auto; /* дефолтное auto */<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <p>Если выставить значение на <code>0</code>, то дополнительное место вокруг контента не будет учтено. Если выставить на <code>auto</code>, то дополнительное свободное место будет распространяться, основываясь на его <code>flex-grow</code> значении. В общем, посмотрите график ниже.</p>
-      <div class="block-info__img">
-        <img
-          src="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg"
-          alt=""
-        />
-      </div>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#flex</h3>
-      <p>Это сокращение для <code>flex-grow</code>, <code>flex-shrink</code> и <code>flex-basis</code> — все вместе взятые. Второй и третий параметры опциональны, то есть <code>flex-shrink</code> и <code>flex-basis</code>. По-дефолту оно имеет значение <code>0 1 auto</code>.</p>
-      <pre>
+          <p>
+            Если выставить значение на <code>0</code>, то дополнительное место
+            вокруг контента не будет учтено. Если выставить на
+            <code>auto</code>, то дополнительное свободное место будет
+            распространяться, основываясь на его
+            <code>flex-grow</code> значении. В общем, посмотрите график ниже.
+          </p>
+          <div class="block-info__img">
+            <img
+              src="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#flex</h3>
+          <p>
+            Это сокращение для <code>flex-grow</code>,
+            <code>flex-shrink</code> и <code>flex-basis</code> — все вместе
+            взятые. Второй и третий параметры опциональны, то есть
+            <code>flex-shrink</code> и <code>flex-basis</code>. По-дефолту оно
+            имеет значение <code>0 1 auto</code>.
+          </p>
+          <pre>
         <code>
 .item <span class="span-punctuation">{</span>
   <span class="span-property">flex</span><span class="span-punctuation">:</span> <длина> none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <p>Рекомендуется использовать сокращенное свойство, вместо набора индивидуальных свойств.</p>
-      <div class="block-info__img">
-        <img
-          src="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg"
-          alt=""
-        />
-      </div>
-    </div>
-    <div class="info-text">
-      <h3 class="title">#align-self</h3>
-      <div class="block-info__img">
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg"
-          alt=""
-        />
-      </div>
-      <p>Это свойство позволяет стандартному выравниванию (или если точно <code>align-items</code> ) элементов, быть перезаписанному для определенного <code>flex</code> элемента.
-      Чтобы увидеть все значения <code>align-self</code>, посмотрите их в <code>align-items</code>.</p>
-      <pre>
+          <p>
+            Рекомендуется использовать сокращенное свойство, вместо набора
+            индивидуальных свойств.
+          </p>
+        </div>
+        <div class="info-text">
+          <h3 class="title">#align-self</h3>
+          <div class="block-info__img">
+            <img
+              src="https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg"
+              alt=""
+            />
+          </div>
+          <p>
+            Это свойство позволяет стандартному выравниванию (или если точно
+            <code>align-items</code> ) элементов, быть перезаписанному для
+            определенного <code>flex</code> элемента. Чтобы увидеть все значения
+            <code>align-self</code>, посмотрите их в <code>align-items</code>.
+          </p>
+          <pre>
         <code>
 .item <span class="span-punctuation">{</span>
   <span class="span-property">align-self</span><span class="span-punctuation">:</span> <длина> auto | flex-start | flex-end | center | baseline | stretch<span class="span-punctuation">;</span>
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <p>Примите во внимание, что <code>float</code>, <code>clear</code> и <code>vertical-align</code> не имеют эффекта на <code>flex</code> элементы.</p>
-    </div>
-    <div class="info-title">
-      <h2 class="title">Примеры</h2>
-    </div>
-    <p>Давайте начнем с очень очень простого примера, решающего ежедневную проблему — идеальное центрирование.</p>
-    <pre>
+          <p>
+            Примите во внимание, что <code>float</code>, <code>clear</code> и
+            <code>vertical-align</code> не имеют эффекта на
+            <code>flex</code> элементы.
+          </p>
+        </div>
+        <div class="info-title">
+          <h2 class="title">Примеры</h2>
+        </div>
+        <p>
+          Давайте начнем с очень очень простого примера, решающего ежедневную
+          проблему — идеальное центрирование.
+        </p>
+        <pre>
         <code>
 .parent <span class="span-punctuation">{</span>
   <span class="span-property">display</span><span class="span-punctuation">:</span> flex<span class="span-punctuation">;</span>
@@ -423,9 +577,21 @@
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <p>Суть в том, что <code>margin</code> с параметром auto в <code>flex</code> контейнере поглощает свободное пространство. Таким образом, выставляя вертикальный отступ на <code>auto</code>, вы заставите элементы идеально сцентрироваться по двум осям.</p>
-      <p>Теперь давайте возьмем другие свойства. Рассмотрим список из шести элементов, с фиксированными размерами для эстетического вида, но они могут автоматически менять размер. Мы бы хотели, чтобы они были равномерно и хорошо распределены по горизонтальной оси, таким образом, чтобы при изменении размера окна браузера, все было гладко. И это <strong>без медиа запросов</strong>.</p>
-      <pre>
+        <p>
+          Суть в том, что <code>margin</code> с параметром auto в
+          <code>flex</code> контейнере поглощает свободное пространство. Таким
+          образом, выставляя вертикальный отступ на <code>auto</code>, вы
+          заставите элементы идеально сцентрироваться по двум осям.
+        </p>
+        <p>
+          Теперь давайте возьмем другие свойства. Рассмотрим список из шести
+          элементов, с фиксированными размерами для эстетического вида, но они
+          могут автоматически менять размер. Мы бы хотели, чтобы они были
+          равномерно и хорошо распределены по горизонтальной оси, таким образом,
+          чтобы при изменении размера окна браузера, все было гладко. И это
+          <strong>без медиа запросов</strong>.
+        </p>
+        <pre>
         <code>
 .flex-container <span class="span-punctuation">{</span>
   <span class="comment">/* Сначала зададим контейнеру flex контекст */</span>
@@ -442,10 +608,32 @@
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <p>Сделано! Все остальное это проблемы стилей. Ниже вы сможете видеть работу этого примера. Вообще пройдите на сам сайт, чтобы по изменять размеры окон и понаблюдать то, что происходит.</p>
-      <iframe id="cp_embed_EKEYob" class="cp_embed_iframe" style="width: 100%; overflow: hidden;" title="CodePen Embed EKEYob" src="https://codepen.io/anon/embed/EKEYob?height=450&amp;theme-id=1&amp;slug-hash=EKEYob&amp;default-tab=result" name="CodePen Embed EKEYob" height="450" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen">CodePen Embed Fallback</iframe>
-      <p>Давайте еще что-нибудь попробуем. Представьте, что у вас есть выровненная по правому борту навигация, находящаяся на самом верху вашего сайта, но вы хотите, чтобы она центрировалась на среднеразмерных экранах и была одной колонкой на совсем маленьких устройствах. Это сделать довольно просто.</p>
-      <pre>
+        <p>
+          Сделано! Все остальное это проблемы стилей. Ниже вы сможете видеть
+          работу этого примера. Вообще пройдите на сам сайт, чтобы по изменять
+          размеры окон и понаблюдать то, что происходит.
+        </p>
+        <iframe
+          id="cp_embed_EKEYob"
+          class="cp_embed_iframe"
+          style="width: 100%; overflow: hidden;"
+          title="CodePen Embed EKEYob"
+          src="https://codepen.io/anon/embed/EKEYob?height=450&amp;theme-id=1&amp;slug-hash=EKEYob&amp;default-tab=result"
+          name="CodePen Embed EKEYob"
+          height="450"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen="allowfullscreen"
+          >CodePen Embed Fallback</iframe
+        >
+        <p>
+          Давайте еще что-нибудь попробуем. Представьте, что у вас есть
+          выровненная по правому борту навигация, находящаяся на самом верху
+          вашего сайта, но вы хотите, чтобы она центрировалась на
+          среднеразмерных экранах и была одной колонкой на совсем маленьких
+          устройствах. Это сделать довольно просто.
+        </p>
+        <pre>
         <code>
   <span class="comment">/* Большие экраны */</span>         
 .navigation  <span class="span-punctuation">{</span>
@@ -471,9 +659,26 @@
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <iframe id="cp_embed_YqaKYR" class="cp_embed_iframe" style="width: 100%; overflow: hidden;" title="CodePen Embed YqaKYR" src="https://codepen.io/anon/embed/YqaKYR?height=250&amp;theme-id=1&amp;slug-hash=YqaKYR&amp;default-tab=result" name="CodePen Embed YqaKYR" height="250" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen">CodePen Embed Fallback</iframe>
-      <p>Давайте попробуем что-нибудь ещё интереснее, пока играемся с flex’ами! Как насчет ориентированного на мобильные устройства трех-колоночного шаблона с шапкой и подвалом на всю ширину экрана? И всё это вне зависимости от порядка элементов. Интересно?</p>
-      <pre>
+        <iframe
+          id="cp_embed_YqaKYR"
+          class="cp_embed_iframe"
+          style="width: 100%; overflow: hidden;"
+          title="CodePen Embed YqaKYR"
+          src="https://codepen.io/anon/embed/YqaKYR?height=250&amp;theme-id=1&amp;slug-hash=YqaKYR&amp;default-tab=result"
+          name="CodePen Embed YqaKYR"
+          height="250"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen="allowfullscreen"
+          >CodePen Embed Fallback</iframe
+        >
+        <p>
+          Давайте попробуем что-нибудь ещё интереснее, пока играемся с flex’ами!
+          Как насчет ориентированного на мобильные устройства трех-колоночного
+          шаблона с шапкой и подвалом на всю ширину экрана? И всё это вне
+          зависимости от порядка элементов. Интересно?
+        </p>
+        <pre>
         <code>
 .wrapper <span class="span-punctuation">{</span>
   <span class="span-property">display</span><span class="span-punctuation">:</span> flex<span class="span-punctuation">;</span>
@@ -523,12 +728,33 @@
 <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <iframe id="cp_embed_vWEMWw" class="cp_embed_iframe" style="width: 100%; overflow: hidden;" title="CodePen Embed vWEMWw" src="https://codepen.io/anon/embed/vWEMWw?height=350&amp;theme-id=1&amp;slug-hash=vWEMWw&amp;default-tab=result" name="CodePen Embed vWEMWw" height="350" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen">CodePen Embed Fallback</iframe>
-      <h2 class="title">Префиксы Flexbox</h2>
-      <p>Flexbox нужны вендорные префиксы для поддержки большинства браузеров. Они не только включают добавленные сначала свойства с вендорным префиксом, тут есть аж целые специальные свойства и названия значений. Так получилось, потому что спецификация flexbox изменялась, создавая «старые», «промежуточные» и «новые» версии.
-      Возможно, лучшим решением является написание кода на последней версии синтаксиса и перезапуск вашего CSS через автопрефиксер, который очень хорошо справляется с добавлением фолбэков.
-      Более того, есть Sass примеси, чтобы помочь с некоторыми префиксерами, которые также дают вам представление о том, что вам нужно сделать.</p>
-      <pre>
+        <iframe
+          id="cp_embed_vWEMWw"
+          class="cp_embed_iframe"
+          style="width: 100%; overflow: hidden;"
+          title="CodePen Embed vWEMWw"
+          src="https://codepen.io/anon/embed/vWEMWw?height=350&amp;theme-id=1&amp;slug-hash=vWEMWw&amp;default-tab=result"
+          name="CodePen Embed vWEMWw"
+          height="350"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen="allowfullscreen"
+          >CodePen Embed Fallback</iframe
+        >
+        <h2 class="title">Префиксы Flexbox</h2>
+        <p>
+          Flexbox нужны вендорные префиксы для поддержки большинства браузеров.
+          Они не только включают добавленные сначала свойства с вендорным
+          префиксом, тут есть аж целые специальные свойства и названия значений.
+          Так получилось, потому что спецификация flexbox изменялась, создавая
+          «старые», «промежуточные» и «новые» версии. Возможно, лучшим решением
+          является написание кода на последней версии синтаксиса и перезапуск
+          вашего CSS через автопрефиксер, который очень хорошо справляется с
+          добавлением фолбэков. Более того, есть Sass примеси, чтобы помочь с
+          некоторыми префиксерами, которые также дают вам представление о том,
+          что вам нужно сделать.
+        </p>
+        <pre>
         <code>
   <span class="media">@mixin</span> flexbox <span class="span-punctuation">() {</span>
     <span class="span-property">display:</span> -webkit-box<span class="span-punctuation">;</span>
@@ -564,8 +790,15 @@
     <span class="span-punctuation">}</span>
         </code>
       </pre>
-      <h3 class="title">Баги</h3>
-      <p>Flexbox определенно не без багов. Лучшая их коллекция находится <a href="https://github.com/philipwalton/flexbugs"><strong>тут</strong></a>. Это open source пространство, где вы сможете отслеживать их новые появления.</p>
-   </div>
+        <h3 class="title">Баги</h3>
+        <p>
+          Flexbox определенно не без багов. Лучшая их коллекция находится
+          <a href="https://github.com/philipwalton/flexbugs"
+            ><strong>тут</strong></a
+          >. Это open source пространство, где вы сможете отслеживать их новые
+          появления.
+        </p>
+      </div>
+    </div>
   </body>
 </html>
