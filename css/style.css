@@ -7,7 +7,7 @@
 body {
   font-family: "Rubik", sans-serif;
   color: #2e3f3e;
-  line-height: 22px;
+  line-height: 1.6;
   font-size: calc(14px + 6 * (100vw / 1280));
 }
 
@@ -23,7 +23,6 @@ h4 {
 .content {
   max-width: 1280px;
   margin: 0 auto;
-  -webkit-box-flex: 1;
   padding: 30px 30px 50px;
 }
 
@@ -39,7 +38,7 @@ h1 {
 }
 
 h2 {
-  display: inline-block;
+  /* display: inline-block; */
   font-size: calc(24px + 6 * (100vw / 1280));
 }
 h3 {
@@ -51,7 +50,7 @@ h3 {
 }
 
 summary {
-  padding: 10px 0;
+  padding: 0 0 20px;
   cursor: pointer;
   outline: none;
 }
@@ -100,6 +99,7 @@ pre code {
   padding: 15px 20px 12px 22px;
   color: #f5d67b;
   font-size: calc(17px + 6 * (100vw / 1280));
+  /* line-height: 1.75; */
   white-space: pre;
   -webkit-overflow-scrolling: touch;
   display: block;
